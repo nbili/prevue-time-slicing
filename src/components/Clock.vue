@@ -1,6 +1,6 @@
 <template>
   <div class="stutterer">
-    <svg :style="{height: '310px', width: '310px'}">
+    <svg height="310px" width="310">
       <circle @click="handleClick" class="clockFace" :cx="155" :cy="155" :r="150" ref="faceRef"></circle>
       <g ref="arcGroupRef">
         <path class="arcHand" v-for="(frame, i) in FRAMES" :key="i"></path>
@@ -54,8 +54,8 @@ export default {
           lx = tx;
           ly = ty;
           const r = 145;
-          tx = 155 + r * Math.cos(this.rotation);
-          ty = 155 + r * Math.sin(this.rotation);
+          tx = 155 + r * Math.cos(rotation);
+          ty = 155 + r * Math.sin(rotation);
           const bigArc = this.SPEED * td < Math.PI ? "0" : "1";
           const path = `M${tx} ${ty}A${r} ${r} 0 ${bigArc} 0 ${lx} ${ly}L155 155`;
           const hue = 120 - Math.min(120, td / 4);

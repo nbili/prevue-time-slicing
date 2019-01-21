@@ -1,6 +1,12 @@
 <template>
-  <div id="app">
-    <Clock/>
+  <div id="root">
+    <div class="container">
+      <div class="demo">
+        <div style="display: block;">
+          <Clock/>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
