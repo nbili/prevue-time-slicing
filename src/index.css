@@ -141,3 +141,8 @@ label label {
   background-color: red;
   transform-origin: bottom center;
 }
+
+/* 隐藏tip */
+.graph-svg-tip {
+  display: none;
+}

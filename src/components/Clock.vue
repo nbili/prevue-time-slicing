@@ -33,7 +33,7 @@ export default {
   updated() {
     console.log("componentDidUpdate()", this.$refs.faceRef);
   },
-  destroyed() {
+  beforeDestroy() {
     this.$refs.faceRef.removeEventListener("click", this.handleClick);
     if (this.frame) {
       cancelAnimationFrame(this.frame);
