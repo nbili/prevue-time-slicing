@@ -142,7 +142,7 @@ label label {
   transform-origin: bottom center;
 }
 
-/* 隐藏tip */
+/* hidden chart tip */
 .graph-svg-tip {
   display: none;
 }

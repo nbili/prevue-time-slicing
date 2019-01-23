@@ -11,14 +11,14 @@
           {{o.label}}
         </label>
       </div>
-      <div class="demo">
+      <div class="demo" @click="handleChartClick">
         <input
           :class="`input ${strategy}`"
           placeholder="longer input → more components and DOM nodes"
           v-model="value"
           @input="handleInput"
         >
-        <div>
+        <div v-if="showDemo">
           <Charts :chartdata="data"/>
         </div>
         <div v-show="showClock">
@@ -51,7 +51,7 @@ export default {
       options: [
         { strategy: "sync", label: "Synchronous" },
         { strategy: "debounced", label: "Debounced" },
-        { strategy: "async", label: "Concurrent" }
+        // { strategy: "async", label: "Concurrent" }
       ]
     };
   },
@@ -87,6 +87,17 @@ export default {
     },
     handleChange(val) {
       this.strategy = val;
+    },
+    handleChartClick(e) {
+      if (this.showDemo) {
+        if (e.shiftKey) {
+          this.showDemo = false;
+        }
+        return;
+      }
+      if (e.shiftKey) {
+        this.showDemo = true;
+      }
     }
   }
 };
